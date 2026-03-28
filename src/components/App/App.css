@@ -1,0 +1,130 @@
+/* --- 1. RESET COMPLET (Bords noirs partout) --- */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-deep: #000000;
+    --bg-card: #0a0a0a;
+    --border: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent: #6366f1;
+}
+
+.App {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    height: 100dvh; /* Fix pour Safari Mobile */
+}
+
+/* --- 2. LAYOUT DESKTOP (PC) --- */
+.app-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 80px; /* Espace pour le bouton + flottant */
+}
+
+/* Sidebar visible par défaut sur PC */
+.sidebar-right {
+    width: 350px;
+    background-color: var(--bg-card);
+    border-left: 1px solid var(--border);
+    padding: 20px;
+    overflow-y: auto;
+    display: block;
+}
+
+.burger-btn, .sidebar-mobile-header, .sidebar-overlay {
+    display: none;
+}
+
+/* --- 3. ADAPTATION MOBILE (< 1024px) --- */
+@media (max-width: 1024px) {
+    .burger-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 900;
+        background: var(--bg-card);
+        color: white;
+        border: 1px solid var(--border);
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .sidebar-right {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Masquée à droite sur mobile */
+        width: 85%;
+        max-width: 320px;
+        height: 100%;
+        z-index: 1000;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+    }
+
+    .sidebar-right.open {
+        right: 0; /* Coulisse vers la gauche sur mobile */
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(4px);
+        z-index: 999;
+    }
+
+    .sidebar-mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 20px;
+    }
+
+    .sidebar-mobile-header button {
+        background: #1a1a1a;
+        color: white;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 5px;
+    }
+}

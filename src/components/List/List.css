@@ -1,0 +1,33 @@
+/* src/components/List/List.css */
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Espace régulier entre les cartes */
+    
+    /* Animation d'apparition fluide */
+    animation: fadeAndSlideIn 0.4s ease-out forwards;
+}
+
+.list-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* L'animation d'apparition type "Linear" */
+@keyframes fadeAndSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

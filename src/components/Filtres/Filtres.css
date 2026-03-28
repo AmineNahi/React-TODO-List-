@@ -1,0 +1,69 @@
+.filtres-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.filtre-group h4 {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.tags-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tag-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.tag-btn:hover {
+    background: #1a1a1d;
+    color: var(--text-primary);
+}
+
+.tag-btn.active {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.4);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.sidebar-section {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-chart-wrapper {
+    height: 150px; /* Taille parfaite pour une sidebar */
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+/* Style des boutons tag dans la sidebar */
+.tag-btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+}

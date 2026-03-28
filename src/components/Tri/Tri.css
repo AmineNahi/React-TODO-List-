@@ -1,0 +1,31 @@
+/* src/components/Tri/Tri.css */
+.tri-container {
+    background: var(--bg-card); /* Utilise la couleur de carte grise anthracite */
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tri-container label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.tri-select {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+/* On personnalise la flèche du select pour le mode sombre */
+.tri-select option {
+    background: var(--bg-sidebar);
+    color: var(--text-primary);
+}

@@ -1,0 +1,123 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    backdrop-filter: blur(4px); /* Petit effet flou très moderne */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Indispensable pour être au-dessus du Footer et de la Sidebar */
+}
+
+.unified-modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 95%;
+    max-width: 500px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: slideUp 0.3s ease-out;
+}
+
+.modal-tabs {
+    display: flex;
+    background: var(--bg-deep);
+    border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    background: rgba(99, 102, 241, 0.05);
+    border-bottom: 2px solid var(--accent);
+}
+
+.modal-body-content {
+    padding: 24px;
+}
+
+/* --- STYLE DES CHAMPS DE SAISIE (Look Notion / Linear) --- */
+
+.form-group-dark {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.form-group-dark label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-group-dark input,
+.form-group-dark textarea {
+    background-color: var(--bg-deep); /* Fond très sombre, presque noir */
+    border: 1px solid var(--border);  /* Bordure très discrète */
+    color: var(--text-primary);       /* Texte en blanc cassé */
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Le texte fantôme (placeholder) */
+.form-group-dark input::placeholder,
+.form-group-dark textarea::placeholder {
+    color: #52525b; 
+}
+
+/* L'effet Premium quand on clique dedans (Focus Ring) */
+.form-group-dark input:focus,
+.form-group-dark textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25); /* Halo indigo subtil */
+}
+
+/* --- STYLE DU BOUTON DE VALIDATION --- */
+.btn-submit-dark {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.btn-submit-dark:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.btn-submit-dark:active {
+    transform: translateY(1px);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

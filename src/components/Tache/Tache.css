@@ -1,0 +1,182 @@
+/* --- CARTE DE LA TÂCHE --- */
+.tache-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.tache-card:hover {
+    border-color: var(--text-secondary);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- EN-TÊTE DE LA TÂCHE --- */
+.tache-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none; /* Empêche de sélectionner le texte en cliquant */
+}
+
+.tache-title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.tache-date {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: block;
+}
+
+.tache-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tache-toggle:hover {
+    background: var(--bg-deep);
+    color: var(--text-primary);
+}
+
+/* --- DÉTAILS DE LA TÂCHE (Mode Lecture) --- */
+.tache-details {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.tache-details p {
+    margin-bottom: 8px;
+}
+
+.tache-details strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* --- BOUTON MODIFIER --- */
+.btn-edit {
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-edit:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+/* =========================================
+   MODE ÉDITION (Style Notion / Linear) 
+   ========================================= */
+
+.edit-form {
+    margin-top: 12px;
+}
+
+.edit-erreur {
+    color: #f87171; /* Rouge doux */
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    padding: 8px;
+    background: rgba(248, 113, 113, 0.1);
+    border-radius: 6px;
+}
+
+.edit-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.edit-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Les fameux inputs au look "Deep Dark" */
+.edit-group input,
+.edit-group textarea {
+    background-color: var(--bg-deep);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    resize: vertical; /* Permet d'agrandir le textarea verticalement */
+}
+
+/* Le Focus Ring au clic */
+.edit-group input:focus,
+.edit-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+/* --- BOUTONS D'ACTION (Édition) --- */
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-cancel-edit {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel-edit:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.btn-save-edit {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-save-edit:hover {
+    background: var(--accent-hover);
+}

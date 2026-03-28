@@ -1,0 +1,77 @@
+/* Footer.css */
+
+/* Positionnement du bouton flottant */
+footer {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 50; /* S'assure qu'il est au-dessus du contenu scrollable */
+}
+
+.btn-add {
+    /* Taille et Forme */
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    
+    /* Typographie du "+" */
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 300; /* "+" fin pour le look pro */
+    line-height: 1;
+    
+    /* Bordure et Curseur */
+    border: none;
+    cursor: pointer;
+    
+    /* Alignement centré du "+" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* --- EFFET #1 : LE DÉGRADÉ --- */
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    
+    /* Ombre de base */
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+
+    /* Transitions fluides pour le hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- EFFET #2 : LA PULSATION (Le halo) --- */
+.btn-add::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Utilise le même dégradé */
+    border-radius: 50%;
+    z-index: -1; /* Derrière le bouton */
+    
+    /* Applique l'animation 'breathe' définie plus bas */
+    animation: breathe 2s infinite ease-out; 
+}
+
+/* Interaction au survol (Hover) */
+.btn-add:hover {
+    transform: translateY(-3px) scale(1.05); /* Monte légèrement */
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5); /* Ombre plus forte */
+}
+
+/* Interaction au clic (Active) */
+.btn-add:active {
+    transform: translateY(-1px) scale(1); /* Effet d'enfoncement */
+}
+
+/* --- DÉFINITION DE L'ANIMATION 'BREATHE' --- */
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.6); /* Le halo s'agrandit */
+        opacity: 0; /* Et disparaît */
+    }
+}
