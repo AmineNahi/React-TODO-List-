@@ -6,7 +6,7 @@ const ModalTaskContent = () => {
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [date, setDate] = useState('');
-    const [equipiers, setEquipiers] = useState(''); // <-- Nouvel état pour les équipiers
+    const [equipiers, setEquipiers] = useState(''); 
     const [erreur, setErreur] = useState('');
 
     const handleSubmit = (e) => {

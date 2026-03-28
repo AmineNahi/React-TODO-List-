@@ -20,10 +20,10 @@ const ICONES = [
 const ModalDossierContent = () => {
     const { dossierAEditer, addDossier, updateDossier } = useContext(TodoContext);
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState(''); // <-- Ajout de la description
+    const [description, setDescription] = useState(''); 
     const [color, setColor] = useState('indigo');
     const [icon, setIcon] = useState('');
-    const [erreur, setErreur] = useState(''); // <-- Ajout de l'état d'erreur
+    const [erreur, setErreur] = useState(''); 
 
     useEffect(() => {
         if (dossierAEditer) {
@@ -37,7 +37,6 @@ const ModalDossierContent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        // --- VALIDATION STRICTE DU CAHIER DES CHARGES ---
         if (title.trim().length < 3) {
             setErreur("L'intitulé doit faire au moins 3 caractères.");
             return;

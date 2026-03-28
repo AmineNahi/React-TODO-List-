@@ -3,7 +3,7 @@ import { TodoContext } from '../../contexts/ToDoContext';
 import './Footer.css';
 
 const Footer = () => {
-    // On appelle la fonction de ton nouveau Context
+    // On appelle la fonction de Context
     const { openCreationModal } = useContext(TodoContext);
 
     return (

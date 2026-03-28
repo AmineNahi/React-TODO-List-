@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../contexts/ToDoContext';
-import { ETAT_TERMINE } from '../../data/constants'; // <--- LA LIGNE À AJOUTER
+import { ETAT_TERMINE } from '../../data/constants';
 import './DossierCard.css';
 
 // Map des couleurs nommées vers des valeurs CSS
@@ -30,7 +30,7 @@ const DossierCard = ({ dossier }) => {
     const colors = COLOR_MAP[dossier.color] || COLOR_MAP.gray;
     const icon = ICON_MAP[dossier.icon] || ICON_MAP.default;
 
-    // Nb de tâches dans ce dossier (Corrigé pour être cohérent avec les filtres)
+    // Nb de tâches dans ce dossier (cohérent avec les filtres)
     const nbTaches = relations.filter(rel => {
         if (rel.dossier !== dossier.id) return false;
         

@@ -1,5 +1,3 @@
-// src/data/constants.js
-
 export const ETATS = {
     NOUVEAU: 'Nouveau',
     EN_COURS: 'En cours',

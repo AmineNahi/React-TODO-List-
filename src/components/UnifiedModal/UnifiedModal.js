@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../contexts/ToDoContext';
-import ModalTaskContent from '../ModalForm/ModalTaskContent'; // Ton formulaire de tâche actuel
-import ModalDossierContent from '../ModalDossier/ModalDossierContent'; // Ton formulaire de dossier
+import ModalTaskContent from '../ModalForm/ModalTaskContent'; 
+import ModalDossierContent from '../ModalDossier/ModalDossierContent';
 import './UnifiedModal.css';
 
 const UnifiedModal = () => {

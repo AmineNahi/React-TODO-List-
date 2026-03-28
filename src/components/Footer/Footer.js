@@ -3,7 +3,7 @@ import { TodoContext } from '../../contexts/ToDoContext';
 import './Footer.css';
 
 const Footer = () => {
-    // On récupère la nouvelle fonction de création centralisée
+    // On récupère la fonction de création centralisée
     const { openCreationModal } = useContext(TodoContext);
 
     return (

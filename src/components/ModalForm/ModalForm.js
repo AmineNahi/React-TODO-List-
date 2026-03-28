@@ -19,7 +19,6 @@ const ModalForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); // Empêche le rechargement de la page
 
-        // Validation métier (Cahier des charges)
         if (title.length < 5) {
             setErreur("L'intitulé doit faire au moins 5 caractères.");
             return;

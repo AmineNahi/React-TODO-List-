@@ -7,8 +7,7 @@ const Tache = ({ data }) => {
     const [isComplet, setIsComplet] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
 
-    // Context : on récupère les dossiers, les relations, et les outils de modification
-    // NOUVEAU : on récupère aussi setFilterDossiers pour le raccourci
+    // Context : on récupère les dossiers, les relations, les outils de modification et setFilterDossiers pour le raccourci
     const { 
         dossiers, 
         relations, 
@@ -38,7 +37,7 @@ const Tache = ({ data }) => {
     const [selectedDossiers, setSelectedDossiers] = useState(dossiersDeLaTache.map(d => d.id));
     const [erreur, setErreur] = useState('');
 
-    // --- NOUVELLE FONCTION : RACCOURCI TACTIL (Clic sur Tag) ---
+    // RACCOURCI TACTIL (Clic sur Tag) ---
     const handleTagClick = (e, dossierId) => {
         e.stopPropagation(); // Évite d'ouvrir/fermer la tâche au clic
         setFilterDossiers([dossierId]); // Active le filtre exclusif sur ce dossier
@@ -190,7 +189,7 @@ const Tache = ({ data }) => {
                                 setEditDescription(data.description);
                                 setEditDateEcheance(data.date_echeance);
                                 setEditEquipiers(initialEquipiers);
-                                setSelectedDossiers(dossiersDeLaTache.map(d => d.id)); // <--- CORRECTIF ICI
+                                setSelectedDossiers(dossiersDeLaTache.map(d => d.id));
                                 setIsEditing(true);
                             }}>
                                 ✏️ Modifier
